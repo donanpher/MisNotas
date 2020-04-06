@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Fernando Souto</author>
  <class>Dialog</class>
  <widget class="QDialog" name="Dialog">
   <property name="geometry">
@@ -7,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>530</width>
-    <height>454</height>
+    <height>463</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,10 +26,14 @@
   <property name="windowTitle">
    <string>Mis Notas</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="logoNotas.qrc">
+    <normaloff>:/prefijo/images/kwrite_writing_book_pencil_note_6093.ico</normaloff>:/prefijo/images/kwrite_writing_book_pencil_note_6093.ico</iconset>
+  </property>
   <widget class="QLabel" name="labelTitulo">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>54</x>
      <y>10</y>
      <width>131</width>
      <height>31</height>
@@ -47,9 +52,9 @@
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>19</x>
+     <x>53</x>
      <y>35</y>
-     <width>500</width>
+     <width>460</width>
      <height>10</height>
     </rect>
    </property>
@@ -71,7 +76,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>68</x>
      <y>40</y>
      <width>241</width>
      <height>17</height>
@@ -106,7 +111,7 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string>v.1.0</string>
+    <string>v.1.1</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -115,8 +120,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>23</x>
-     <y>87</y>
+     <x>140</x>
+     <y>68</y>
      <width>110</width>
      <height>17</height>
     </rect>
@@ -128,7 +133,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Texto de la nota:</string>
+    <string>Texto de la nota</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEditNota">
@@ -149,9 +154,9 @@
   <widget class="QPushButton" name="pushButtonGuardar">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>21</x>
      <y>142</y>
-     <width>101</width>
+     <width>110</width>
      <height>29</height>
     </rect>
    </property>
@@ -163,15 +168,21 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/otro/images/Note256_25041.ico);</string>
+   </property>
    <property name="text">
     <string>&amp;Guardar</string>
    </property>
   </widget>
   <widget class="QTableWidget" name="tableWidgetNotas">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>190</y>
+     <y>197</y>
      <width>491</width>
      <height>192</height>
     </rect>
@@ -182,8 +193,14 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
    <property name="alternatingRowColors">
     <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::ExtendedSelection</enum>
    </property>
    <property name="selectionBehavior">
     <enum>QAbstractItemView::SelectRows</enum>
@@ -192,7 +209,7 @@
     <number>1</number>
    </property>
    <property name="columnCount">
-    <number>3</number>
+    <number>4</number>
    </property>
    <row/>
    <column>
@@ -225,6 +242,11 @@
       <green>255</green>
       <blue>255</blue>
      </color>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tag</string>
     </property>
    </column>
    <column>
@@ -304,6 +326,20 @@
     <property name="text">
      <string/>
     </property>
+    <property name="background">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>9</red>
+       <green>240</green>
+       <blue>248</blue>
+      </color>
+     </brush>
+    </property>
+   </item>
+   <item row="0" column="3">
+    <property name="text">
+     <string/>
+    </property>
     <property name="font">
      <font>
       <family>Gallaecia Castelo</family>
@@ -325,7 +361,7 @@
    <property name="geometry">
     <rect>
      <x>19</x>
-     <y>395</y>
+     <y>422</y>
      <width>101</width>
      <height>29</height>
     </rect>
@@ -346,7 +382,7 @@
    <property name="geometry">
     <rect>
      <x>148</x>
-     <y>395</y>
+     <y>422</y>
      <width>101</width>
      <height>29</height>
     </rect>
@@ -367,7 +403,7 @@
    <property name="geometry">
     <rect>
      <x>410</x>
-     <y>396</y>
+     <y>422</y>
      <width>101</width>
      <height>29</height>
     </rect>
@@ -388,7 +424,7 @@
    <property name="geometry">
     <rect>
      <x>26</x>
-     <y>430</y>
+     <y>176</y>
      <width>481</width>
      <height>20</height>
     </rect>
@@ -403,8 +439,8 @@
   <widget class="QLabel" name="labelID">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>110</y>
+     <x>10</x>
+     <y>60</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -422,6 +458,12 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Fecha en formato ISO</string>
+   </property>
+   <property name="maxLength">
+    <number>10</number>
+   </property>
   </widget>
   <widget class="QLabel" name="labelFecha">
    <property name="geometry">
@@ -436,7 +478,111 @@
     <string>Fecha (aaaa-mm-dd)</string>
    </property>
   </widget>
+  <widget class="QLabel" name="labelImagen">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>2</y>
+     <width>50</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/prefijo/images/kwrite_writing_book_pencil_note_6093.ico);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>images/kwrite_writing_book_pencil_note_6093.ico</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>22</x>
+     <y>91</y>
+     <width>30</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Gallaecia Castelo</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Tag</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditTag">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>91</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Introducir un Tag o Etiqueta</string>
+   </property>
+   <property name="maxLength">
+    <number>10</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTotalReg">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>390</y>
+     <width>131</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Notas:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonBuscar">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>422</y>
+     <width>101</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Gallaecia Castelo</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>&amp;Buscar</string>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>lineEditFecha</tabstop>
+  <tabstop>lineEditTag</tabstop>
+  <tabstop>textEditNota</tabstop>
+  <tabstop>pushButtonGuardar</tabstop>
+  <tabstop>tableWidgetNotas</tabstop>
+  <tabstop>pushButtonModificar</tabstop>
+  <tabstop>pushButtonEliminar</tabstop>
+  <tabstop>pushButtonBuscar</tabstop>
+  <tabstop>pushButtonSalir</tabstop>
+ </tabstops>
+ <resources>
+  <include location="logoNotas.qrc"/>
+ </resources>
  <connections/>
 </ui>
