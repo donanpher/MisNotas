@@ -242,7 +242,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Mis Notas"))
         self.labelTitulo.setText(_translate("Dialog", "Mis Notas"))
         self.label.setText(_translate("Dialog", "Pequeña aplicación para notas personales"))
-        self.label_2.setText(_translate("Dialog", "v.1.1"))
+        self.label_2.setText(_translate("Dialog", "v.1.2"))
         self.label_3.setText(_translate("Dialog", "Texto de la nota"))
         self.pushButtonGuardar.setText(_translate("Dialog", "&Guardar"))
         item = self.tableWidgetNotas.horizontalHeaderItem(0)

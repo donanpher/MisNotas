@@ -1,22 +1,22 @@
-<HEAD>Mis Notas</HEAD>
-<H1>Una simple aplicación para tomar notas.</H1>
+# Mis Notas
+Una simple aplicación para tomar notas.  
+Hecha en Python 3.6 + PyQt5
   
 Fernando Souto (donanpher@gmail.com)  
 A Coruña, Abril 2020 (durante la cuarentena del coronavirus covid-19)  
 
+<H2>Características básicas</H2>
 
-03-04-2020	Fer
-	v.1.0: Funcionalidad básica hecha y comprobada.
+## 03-04-2020 v.1.0: Funcionalidad básica hecha y comprobada.
 	Mi primera aplicación hecha en PyQt5.
 	Como había que hacer algo, ahora que estoy encerrado por lo del Coronavirus, decidí hacer la más simple aplicación con uso de bb.dd.
 	. creado un ejecutable con pyinstaller (le llevó 3 min. 10 seg. y genera un ejecutable de 46,3 MB):
-		`$ pyinstaller --onefile --windowed --add-data="misnotas.db:." misnotas.py`
+		$ pyinstaller --onefile --windowed --add-data="misnotas.db:." misnotas.py
 		A pesar de haberle pasado --add-data="misnotas.db:." al final no me incluye la bb.dd, solo un ejecutable misnotas
 		Lógico por otra parte, pues le estoy diciendo que me construya --onefile
 		No hay problema, porque al distribuirlo en un zip, se pondrían los 2 archivos, el ejecutable y el .db
 
-06-04-2020	Fer
-	v.1.1 Características nueva versión:
+## 06-04-2020 v.1.1 Características nueva versión:
 	[x] comprobar existencia bb.dd. y si no existe, crearla y añadir 1 reg. de muestra
 	[x] conseguir poner el label inferior de mensajes en rojo
 	[ ] ponerle iconos a los botones
@@ -36,6 +36,14 @@ A Coruña, Abril 2020 (durante la cuarentena del coronavirus covid-19)
 		Al ejecutar la aplicación, me sale el icono elegido, tanto en el label como como icono de aplicación, pero
 		cuando empaqueto la aplicación con pyinstaller, el icono de la aplicación no aparece.
 	[ ] Doy por concluida esta versión y dejo para más adelante investigar por qué pyinstaller no incluye el icono de aplicación
+		`pyinstaller --onefile --icon=./images/kwrite_writing_book_pencil_note_6093.ico --windowed --add-data="misnotas.db:." misnotas.py  
+		esto lo mete en el .spec pero sigo sin ver el icono de la aplicación 
+		Ahora me sale un error de: "196 WARNING: ignoring icon, platform not capable"
+## 27-04-2020	v.1.2 Características nueva versión:
+	[x] Corregir Queries SQL con parámetros.
+	[x] `pyinstaller --icon=./images/kwrite_writing_book_pencil_note_6093.ico --windowed misnotas.py`
+	[ ] Añadir StatusBar
+	[ ] Corregir variable de clase ...
+	[ ] Doble-click en la lista para modificar
 
 		
-
