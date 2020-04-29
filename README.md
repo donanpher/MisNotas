@@ -1,49 +1,40 @@
-# Mis Notas
-Una simple aplicación para tomar notas.  
-Hecha en Python 3.6 + PyQt5
-  
+<h1>Mis Notas</h1>
+
+![Python GPLv3](https://img.shields.io/badge/Python-v3.6.7-success) ![PyQt v5](https://img.shields.io/badge/PyQt-5-brightgreen) ![SQLite v3](https://img.shields.io/badge/SQLite-v.3-blueviolet) ![License GPLv3](https://img.shields.io/badge/License-GPLv3-red) 
+
+## Una simple aplicación para tomar notas  
+## <span style="color:grey"><i>A simple application to take notes</i></span>
+Hecha en Python 3.6.7 + PyQt5 + SQLite 3  
+Versión para Linux, testada únicamente en Ubuntu Budgie 18.04.4 LTS  
+<span style="color:grey">
+<i>Made with Python 3.6.7 + PyQt5 + SQLite 3</i>  
+<i>Linux version, tested only on Ubuntu Budgie 18.04.4 LTS</i>  
+</span>  
 Fernando Souto (donanpher@gmail.com)  
-A Coruña, Abril 2020 (durante la cuarentena del coronavirus covid-19)  
+A Coruña (Galicia), Spain  
+Abril 2020 (durante la cuarentena del #Coronavirus #SARS-CoV-2 #Covid-19)  
+<span style="color:grey"><i>April 2020 (during the #Coronavirus # SARS-CoV-2 # Covid-19 quarantine)</i></span>  
 
-<H2>Características básicas</H2>
+---
+![Screenshot](./images/Screenshot_MisNotas.png)
+---
+## Instalación en Linux <span style="color:grey"><i>(Linux installation)</i></span>
+* <a href="https://drive.google.com/file/d/1Y3UEnAjLV4oks4N5Ix0u5Ih7jYoVv9t3/view?usp=sharing">Descargar MisNotas.zip (46 MB)</a>
+* Descomprimelo en una nueva carpeta, por ejemplo /opt/misnotas/
+* Ejecuta MisNotas (es un único fichero ejecutable con todas las dependencias ya incluidas)
+---
+* <span style="color:grey"><i><a href="https://drive.google.com/file/d/1Y3UEnAjLV4oks4N5Ix0u5Ih7jYoVv9t3/view?usp=sharing">Download MisNotas.zip (46 MB)</a></i> </span>  
+* <span style="color:grey"><i>Unzip it into a new folder, for example /opt/misnotas/</i> </span>  
+* <span style="color:grey"><i>Run MisNotas (it's a single file with all dependencies included)</i> </span>  
+---
+## Dependencias:  <span style="color:grey"><i>(Dependencies)</i></span>
+Python 3.6.7, PyQt5, SQLite 3  
 
-## 03-04-2020 v.1.0: Funcionalidad básica hecha y comprobada.
-	Mi primera aplicación hecha en PyQt5.
-	Como había que hacer algo, ahora que estoy encerrado por lo del Coronavirus, decidí hacer la más simple aplicación con uso de bb.dd.
-	. creado un ejecutable con pyinstaller (le llevó 3 min. 10 seg. y genera un ejecutable de 46,3 MB):
-		$ pyinstaller --onefile --windowed --add-data="misnotas.db:." misnotas.py
-		A pesar de haberle pasado --add-data="misnotas.db:." al final no me incluye la bb.dd, solo un ejecutable misnotas
-		Lógico por otra parte, pues le estoy diciendo que me construya --onefile
-		No hay problema, porque al distribuirlo en un zip, se pondrían los 2 archivos, el ejecutable y el .db
+---
+## Descripción General <span style="color:grey"><i>(General Description)</i></span>
+Sencilla aplicación para tomar notas.  
+(es mi primera aplicación hecha con PyQt5 y me ha servido como introducción y aprendizaje)  
+<span style="color:grey"><i>Simple application for taking notes</i></span>  
+<span style="color:grey"><i>It is my first application made with PyQt5 and it has served as an introduction and learning</i></span>  
 
-## 06-04-2020 v.1.1 Características nueva versión:
-	[x] comprobar existencia bb.dd. y si no existe, crearla y añadir 1 reg. de muestra
-	[x] conseguir poner el label inferior de mensajes en rojo
-	[ ] ponerle iconos a los botones
-	[x] poner un label que muestre el total de notas
-	[x] ocultar columna ID y añadir columna TAGLABEL|CODIGO o algo similar para añadir un campo codificable de texto(10)
-	[x] añadir botón para buscaar por ese la columna activa
-	[x] añadido messagebox con los créditos al darle click a la imágen del bloc de notas
-	[x] diversos retoques: tamaño fijo de la ventana, etc...
-	[ ] comprobar si se puede cambiar pyside2
-	[x] después de buscar algo, queda el TableWidget filtrado con los resultados de la búsqueda. 
-		Si se vuelve a buscar y se cancela, hago una recarga de todos los registros, pero ahora
-		he metido al botón buscar un modo conmutado, es decir, cambia entre Buscar/Actualizar,
-		en función de si se ha hecho una búsqueda o no.
-	[x] pyinstaller no me incluye las imágenes/iconos...hay que crear un resource...
-		Creado el recurso pero al ejecutar la app. da un error: No module named 'logoNotas_qrc'
-		Solución: hay que compilar el recurso igual que el ui: `$ pyrcc5 logoNotas.qrc -o logoNotas_rc.py`
-		Al ejecutar la aplicación, me sale el icono elegido, tanto en el label como como icono de aplicación, pero
-		cuando empaqueto la aplicación con pyinstaller, el icono de la aplicación no aparece.
-	[ ] Doy por concluida esta versión y dejo para más adelante investigar por qué pyinstaller no incluye el icono de aplicación
-		`pyinstaller --onefile --icon=./images/kwrite_writing_book_pencil_note_6093.ico --windowed --add-data="misnotas.db:." misnotas.py  
-		esto lo mete en el .spec pero sigo sin ver el icono de la aplicación 
-		Ahora me sale un error de: "196 WARNING: ignoring icon, platform not capable"
-## 27-04-2020	v.1.2 Características nueva versión:
-	[x] Corregir Queries SQL con parámetros.
-	[x] `pyinstaller --icon=./images/kwrite_writing_book_pencil_note_6093.ico --windowed misnotas.py`
-	[ ] Añadir StatusBar
-	[ ] Corregir variable de clase ...
-	[ ] Doble-click en la lista para modificar
-
-		
+--- 
